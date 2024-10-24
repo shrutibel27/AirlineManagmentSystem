@@ -112,7 +112,7 @@ public class Login extends JFrame implements ActionListener {
             try{
                 Conn c =new Conn();
                 String query="select * from login where username = '"+username+"' and password = '"+Password+"'";
-                ResultSet rs=c.s.executeQuery(query);
+                ResultSet rs=c.s.executeQuery(query);  // werite bez select is ddl query
                 
                 if(rs.next()){
                     new HomePage();
