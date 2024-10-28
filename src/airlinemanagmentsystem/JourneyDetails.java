@@ -19,7 +19,7 @@ public class JourneyDetails extends JFrame implements ActionListener{
             Conn conn=new Conn();
             ResultSet rs=conn.s.executeQuery("select * from FlightDetails");
             //use jarfile to print result in table format 
-
+            table.setModel(DbUtils.resultSetToTableModel(rs));
             
             //method 
 //            int rows=0,colms=0;
@@ -35,7 +35,11 @@ public class JourneyDetails extends JFrame implements ActionListener{
         }catch(Exception ae){
             ae.printStackTrace();
         }
+        //to add scorebar use JScrollPane
+        JScrollPane jsp=new JScrollPane(table);
         
+        jsp.setBounds(0,0,800,500);
+        add(jsp);
         
         //1
         setSize(800,500);

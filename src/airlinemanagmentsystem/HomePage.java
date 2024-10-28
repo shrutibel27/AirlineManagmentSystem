@@ -108,7 +108,9 @@ public class HomePage extends JFrame implements ActionListener {
 
         //3. Create menu items
         JMenuItem flightDetails = new JMenuItem("Flight Details");
+        flightDetails.addActionListener(this);
         details.add(flightDetails);
+        
         //3.1
         customerDetails = new JMenuItem("Add Customer Details"); // Rename for consistency
         customerDetails.addActionListener(this); // Add action listener for this item
